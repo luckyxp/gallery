@@ -18,7 +18,13 @@ function update() {
     key = document.querySelector("#key").value
     fetch('https://mscript.oss-cn-hangzhou.aliyuncs.com/gourdKey.txt',{
         method:'put',
-        body: key})
+        body: key}).then(res=>{
+        	if(res.ok){
+        		alert("ok")
+        	}else{
+        		alert("error")
+        	}
+        })
 }
 </script>
 <style type="text/css">
@@ -31,11 +37,16 @@ function update() {
 	.box textarea{
 		width: 80%;
 		height: 300px;
+		border: 1px solid #8dc794;
 	}
 	.box button{
+		margin-top: 20px;
+		background-color: #8dc794;
+		color: #fff;
 		width: 120px;
 		height: 50px;
-
+		border: 0;
+		border-radius: 10px;
 	}
 </style>
 </html>
